@@ -229,7 +229,8 @@ app.get('/api/walkers/summary', async (req,res) => {
         const [summary] = await db.execute(`
             SELECT u.username AS walker_username,
             COUNT(r.rating_id) AS total_ratings,
-            ROUND(AVG(.rating), 1)
+            ROUND(AVG(.rating), 1) AS average_rating,
+            COUNT
 
 
         `);
