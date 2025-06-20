@@ -63,6 +63,16 @@ app.use(express.static(path.join(__dirname, 'public')));
         );
       `);
 
+        await db.execute(`
+        CREATE TABLE IF NOT EXISTS Dogs (
+            dog_id INT AUTO_INCREMENT PRIMARY KEY,
+            owner_id INT,
+            name VARCHAR(50),
+            size ENUM('small', 'medium', 'large'),
+            FOREIGN KEY (owner_id) REFERENCES Users(user_id)
+        );
+        `);
+
       // Insert data if table is empty
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
       if (rows[0].count === 0) {
