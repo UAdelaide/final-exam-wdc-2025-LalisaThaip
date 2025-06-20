@@ -34,6 +34,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user); // Return the user info from session
 });
 
+// Logs out the current user by destroying the session
 router.post('logout/', (req,res) => {
   req.session.destroy(err =>{ //destroy session
     if (err) {
