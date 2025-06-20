@@ -1,4 +1,6 @@
-//const { router } = require("../../part1/app");
+const express = require('express');
+const router = express.Router();
+const db = require('../models/db');
 
 // POST login using username and password
 router.post('/login', async (req, res) => {
@@ -14,12 +16,12 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    req.session.user = rows[0]; //save user to session
+    req.session.user = rows[0]; // Save user info in session
     res.json({ message: 'Login success!', user: rows[0] });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Login failed' });
   }
-
 });
 
 module.exports = router;
