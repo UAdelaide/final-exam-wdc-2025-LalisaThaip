@@ -195,5 +195,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // api/dogs
 
 app.get('/api/dogs', async (req,res) => {
+    try{
+        const []
+    }
 
-}_;
+});
