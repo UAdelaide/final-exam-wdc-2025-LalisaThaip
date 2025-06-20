@@ -32,7 +32,10 @@ router.get('/me', (req, res) => {
 });
 
 router.post('logout/', (req,res) => {
-  req.session.destroy
+  req.session.destroy(err =>{
+    if (err) {
+      return}
+  })
 })
 
 module.exports = router;
