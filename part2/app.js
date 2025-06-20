@@ -23,7 +23,8 @@ app.use(session({
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 // added route for dogRoutes to show dog name on owner dashboard
-const dogRoutes 
+const dogRoutes = require('./routes/dogRoute');
+
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
