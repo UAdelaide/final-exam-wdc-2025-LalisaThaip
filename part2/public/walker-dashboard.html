@@ -58,6 +58,18 @@
           }
         }
 
+
+        // added function to retrieve current logged-in user
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Not logged in');
+            return await res.json();
+          } catch (err) {
+            throw new Error('Failed to get current user');
+          }
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
@@ -80,16 +92,6 @@
           }
         }
 
-        // added function to retrieve current logged-in user
-        async function getCurrentUser() {
-          try {
-            const res = await fetch('/api/users/me');
-            if (!res.ok) throw new Error('Not logged in');
-            return await res.json();
-          } catch (err) {
-            throw new Error('Failed to get current user');
-          }
-        }
 
         // added logout method
         async function logout() {
