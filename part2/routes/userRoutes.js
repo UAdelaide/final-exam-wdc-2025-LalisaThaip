@@ -10,8 +10,8 @@ router.post('/login', async (req, res) => {
       WHERE username - ? AND password_hash = ?
     `, [usernme, password]);
 
-    if (rows.length ===0) {
-      
+    if (rows.length === 0) {
+      return res.status(401).json({error})
     }
   }
 
