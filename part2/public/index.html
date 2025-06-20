@@ -42,8 +42,8 @@
     <div class="container mt-5">
       <h2 class="mb-4 text-primary">All Registered Dogs</h2>
       <table class="table table-bordered">
-            <!-- Table header with column names -->
 
+        <!-- Table header with column names -->
         <thead class="table-dark">
           <tr>
             <th>Dog ID</th>
@@ -53,6 +53,7 @@
             <th>Photo</th>
           </tr>
         </thead>
+        <!-- Table body populated dynamically using Vue.js -->
         <tbody>
           <tr v-for="dog in dogs" :key="dog.dog_id">
             <td>{{ dog.dog_id }}</td>
