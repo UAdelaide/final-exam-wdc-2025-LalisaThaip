@@ -57,7 +57,8 @@
           try {
             //send username and password in the request body
             const res = await fetch('/api/users/login', {
-              method: 
+              method: 'POST',
+              headers: { 'Content-Type': }
 
             })
           }
