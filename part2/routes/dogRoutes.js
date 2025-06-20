@@ -26,7 +26,8 @@ router.get('/', async (req,res) => {
         FROM Dogs
         `);
         res.json(rows);
-        
+    } catch (err) {
+        res.status
     }
 })
 
