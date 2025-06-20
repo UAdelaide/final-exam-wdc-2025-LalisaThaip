@@ -18,8 +18,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.user = rows[0]; // Save user info in session
-        // Send success response
-
+    // Send success response
     res.json({ message: 'Login success!', user: rows[0] });
   } catch (err) {
     console.error(err);
@@ -27,6 +26,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Returns the currently logged-in user's session data
 router.get('/me', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
