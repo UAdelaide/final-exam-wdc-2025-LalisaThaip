@@ -4,21 +4,18 @@ require('dotenv').config();
 
 const app = express();
 
-//  added express-session for session handling
-const session = require('express-session');
 
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-// user express-session middleware
+// added user express-session middleware
 const session = require('express-session');
 app.use(session({
   secret: 'secret-dog',
   resave: false,
   saveUninitialized: false
 }));
-
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
