@@ -55,6 +55,7 @@
         </thead>
         <!-- Table body populated dynamically using Vue.js -->
         <tbody>
+          <!-- Loop through the `dogs` array and render each dog's info in a row -->
           <tr v-for="dog in dogs" :key="dog.dog_id">
             <td>{{ dog.dog_id }}</td>
             <td>{{ dog.name }}</td>
