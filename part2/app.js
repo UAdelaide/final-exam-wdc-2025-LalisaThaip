@@ -15,6 +15,7 @@ app.use(session({
   secret: 'secret-dog',
   resave: false,
   saveUninitialized: false
+  cookie: 
 }));
 
 // Routes
