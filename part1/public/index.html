@@ -49,15 +49,16 @@
     <div id="app">
         <h1>DOG WOOF ! DOG WORF !! DOG WORLD !!!</h1>
         <p style="font-size: 30px">Welcome to Dog of the Day. WALK A DOG OR GET YOUR DOG WALKED.</p>
+        <div class="info">
+            NAME: <span style="color:yellow">Isabella Swan</span><br>
+            BREED: <span style="color:grey">A cute Chihuahua</span><br>
+            AGE: <span style="color:white">Maybe around the cute age of 2</span><br>
+        </div>
         <button class='button' @click="getDog">NAH LET'S SEE ANOTHER DOG"</button>
         <img class="dog-img" :src="dogPic" alt="">
     </div>
 
-    <div class="info">
-        NAME: <span style="color:yellow">Isabella Swan</span><br>
-        BREED: <span style="color:grey">A cute Chihuahua</span><br>
-        AGE: <span style="color:white">Maybe around the cute age of 2</span><br>
-    </div>
+
 
 
 <script>
