@@ -11,6 +11,9 @@ router.get('/owner/:ownerId', async (req, res) => {
         FROM Dogs
         WHERE owner_id = ?
         `, [ownerId]);
-        
+
+        res.json(rows);
+    } catch (err) {
+        res.status(500)
     }
 })
