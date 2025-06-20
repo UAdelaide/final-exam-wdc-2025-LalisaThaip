@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
       });
 
       // Create a table if it doesn't exist
-      await db.execute(`
+     \await db.execute(`
         CREATE TABLE Users (
             user_id INT AUTO_INCREMENT PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             role ENUM('owner', 'walker') NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
-     `);
+    `);
 
       await db.execute(`
             CREATE TABLE Dogs (
