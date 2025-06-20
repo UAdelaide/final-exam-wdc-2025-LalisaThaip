@@ -144,10 +144,31 @@ app.use(express.static(path.join(__dirname, 'public')));
       const [walkCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
       if (walkCount[0].count === 0) {
         await db.execute(`
-            INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-            VALUES
-            ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-            ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted')
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Max' and owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')),
+            '2025-06-10 08:00:00', 30, 'Parklands', 'open'
+        ),
+
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Bella' and owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
+            '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'
+        ),
+
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Minion' and owner_id = (SELECT user_id FROM Users WHERE username = 'bobwalker')),
+            '2025-06-10 10:30:00', 45, 'Hampstead', 'open'
+        ),
+
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Kumo' and owner_id = (SELECT user_id FROM Users WHERE username = 'lisawalker')),
+            '2025-06-10 11:30:00', 30, 'Bangkok', 'open'
+        ),
+
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Lucy' and owner_id = (SELECT user_id FROM Users WHERE username = 'pammy123')),
+            '2025-08-10 14:30:00', 60, 'Emporium', 'open'
+        );b
         `);
       }
 
