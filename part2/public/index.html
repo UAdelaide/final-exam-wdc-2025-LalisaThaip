@@ -104,7 +104,10 @@
 
         //added fetch all dog details
         async fetchAllDogs() {
-          
+          try {
+            const res = await fetch('/api/dogs');
+            
+          }
         }
       }
     }).mount('#app');
