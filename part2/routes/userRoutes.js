@@ -31,6 +31,6 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-
+router.post('logout/', (re))
 
 module.exports = router;
