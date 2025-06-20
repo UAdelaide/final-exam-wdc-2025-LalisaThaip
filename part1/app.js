@@ -216,7 +216,7 @@ app.get('/api/walkrequests/open', async (req,res) => {
             JOIN Users u on d.owner_id = u.user_id
             WHERE wr.status = 'open'
         `);
-    } catch(err) {wa
+    } catch(err) {
         res.status(500).json({ error: 'Failed to fetch open walkrequests' });
     }
 });
