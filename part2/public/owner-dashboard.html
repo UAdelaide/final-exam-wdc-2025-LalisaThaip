@@ -27,7 +27,7 @@
             <!--Modified this section to show name of owned dogs-->
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" class="form-select" required>
-              <option disabled value=""</option>"
+              <option disabled value="">-- Choose a dog --</option>"
               <option v-for="dog in ownedDogs" :key="dog.dog_id" :value="dog.dog_id">
                 {{ dog.name }}
               </option>
