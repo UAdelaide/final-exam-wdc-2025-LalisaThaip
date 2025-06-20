@@ -22,7 +22,11 @@ router.get('/owner/:ownerId', async (req, res) => {
 router.get('/', async (req,res) => {
     try {
         const [rows] = await db.query(`
-        SELECT dog_id , `)
+        SELECT dog_id , name, size, owner_id
+        FROM Dogs
+        `);
+        res.json(rows);
+        
     }
 })
 
