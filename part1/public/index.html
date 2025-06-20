@@ -3,7 +3,6 @@
 <head>
     <title>Dog of the Day</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
 
@@ -14,26 +13,4 @@
     <p>Welcome to Dog of the Day. WALK A DOG OR GET YOUR DOG WALKED.</p>
 </body>
 
-<script>
-    const { createApp } = Vue;
-    createApp({
-        data() {
-            return {
-                dogPic: ''
-            };
-        },
-        methods: {
-            async getDog() {
-                const res = await fetch('https://dog.ceo/dog-api/documentation/random');
-                const data = await res.json();
-                this.dogPic = data.message;
-            }
-        },
-        mounted() {
-            this.getDog();
-        }
-
-
-    }).mount('#app');
-</script>
 </html>
