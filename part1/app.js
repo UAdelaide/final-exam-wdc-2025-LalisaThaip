@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             role ENUM('owner', 'walker') NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
-      `);
+     `);
 
       await db.execute(`
             CREATE TABLE Dogs (
