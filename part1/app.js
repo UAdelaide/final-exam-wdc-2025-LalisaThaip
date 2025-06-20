@@ -115,6 +115,9 @@ app.use(express.static(path.join(__dirname, 'public')));
             );
         `);
 
+        // inserting test data if table is empty
+        
+
 
 
 
