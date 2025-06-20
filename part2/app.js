@@ -11,7 +11,7 @@ const session = require('express-session');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 // user express-session middleware
-app.use
+app.use(session)
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
