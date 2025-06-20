@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// GET dogs by owner_id
+// GET dogs by owner_id Part 1
 router.get('/owner/:ownerId', async (req, res) => {
     const ownerId = req.params.ownerId;
     try {
@@ -17,5 +17,7 @@ router.get('/owner/:ownerId', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
+
+
 
 module.exports = router;
