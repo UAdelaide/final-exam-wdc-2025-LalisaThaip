@@ -28,6 +28,9 @@
                 const data = await res.json();
                 this.dogPic = data.message;
             }
+        },
+        mounted() {
+            this.getDog();
         }
 
     })
