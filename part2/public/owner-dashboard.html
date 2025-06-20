@@ -24,7 +24,7 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
 
-            <!--Modified this section to show name o-->
+            <!--Modified this section to show name of owned dogs-->
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" class="form-select" required>
               <option v-for="dog in ownedDogs" :key="dog.dog_id" :value="dog.dog_id">
