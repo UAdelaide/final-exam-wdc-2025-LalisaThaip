@@ -106,7 +106,10 @@
         async fetchAllDogs() {
           try {
             const res = await fetch('/api/dogs');
-            const dogList = await res
+            const dogList = await res.json();
+
+            // fetch a random photo for each dog with the api
+            
           }
         }
       }
