@@ -84,7 +84,7 @@
             if (!res.ok) throw new Error('Not logged in');
             return await res.json();
           } catch (err) {
-            throw new Error('Failed to get ')
+            throw new Error('Failed to get current user');
           }
         }
 
