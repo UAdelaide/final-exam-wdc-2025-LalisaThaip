@@ -18,6 +18,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.user = rows[0]; // Save user info in session
+        // Send success response
+
     res.json({ message: 'Login success!', user: rows[0] });
   } catch (err) {
     console.error(err);
