@@ -159,7 +159,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             5
             );
         `);
-        }
+      }
 
 
     } catch (err) {
