@@ -17,5 +17,5 @@ VALUES
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
 (
     (SELECT dog_id FROM Dogs WHERE name = 'Max' and owner_id = (SELECT user_if FROM Users WHERE username = 'alice123')),
-    '2025-06-10 08:00:00', 30, 
+    '2025-06-10 08:00:00', 30, 'Parklands', 'open'
 )
