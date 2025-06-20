@@ -154,7 +154,7 @@
 
         onMounted(() => {
           loadWalks();
-          loadOwnedDogs();
+          loadOwnedDogs(); //added funtion to 
         });
 
         return {
@@ -163,8 +163,8 @@
           message,
           error,
           submitWalkRequest,
-          logout,
-          ownedDogs // for displaying owned dogs of 
+          logout, //logout
+          ownedDogs // for displaying owned dogs of logged in owner
         };
       }
     }).mount('#app');
