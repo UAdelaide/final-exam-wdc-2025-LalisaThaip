@@ -15,7 +15,8 @@ app.use(session({
   secret: 'secret-dog',
   resave: false,
   saveUninitialized: false
-  cookie: {}
+  cookie: { maxAge: 24 * 60 * 60 * 1000 // 1 day session lifetime
+    }
 }));
 
 // Routes
