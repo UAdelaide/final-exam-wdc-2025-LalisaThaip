@@ -137,6 +137,7 @@
           }
         }
 
+        //added 
         const ownedDogs = ref([]);
 
         async function loadOwnedDogs(){
@@ -154,7 +155,7 @@
 
         onMounted(() => {
           loadWalks();
-          loadOwnedDogs(); //added funtion to 
+          loadOwnedDogs(); //added funtion to load owned dogs to choose
         });
 
         return {
