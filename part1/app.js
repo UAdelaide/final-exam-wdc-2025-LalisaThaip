@@ -130,15 +130,15 @@ app.use(express.static(path.join(__dirname, 'public')));
       }
 
       const [dogCount] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-        if (dogCount[0].count === 0) {
+      if (dogCount[0].count === 0) {
         await db.execute(`
             INSERT INTO Dogs (owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
             ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
         `);
-         }
+      }
 
-        const [walkCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+      const [walkCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
         if (walkCount[0].count === 0) {
         await db.execute(`
             INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
@@ -148,18 +148,18 @@ app.use(express.static(path.join(__dirname, 'public')));
         `);
         }
 
-    const [ratingCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (ratingCount[0].count === 0) {
-      await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
-        VALUES (
-          (SELECT request_id FROM WalkRequests WHERE status = 'accepted'),
-          (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-          (SELECT user_id FROM Users WHERE username = 'carol123'),
-          5
-        );
-      `);
-    }
+        const [ratingCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
+        if (ratingCount[0].count === 0) {
+        await db.execute(`
+            INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
+            VALUES (
+            (SELECT request_id FROM WalkRequests WHERE status = 'accepted'),
+            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+            (SELECT user_id FROM Users WHERE username = 'carol123'),
+            5
+            );
+        `);
+        }
 
 
     } catch (err) {
