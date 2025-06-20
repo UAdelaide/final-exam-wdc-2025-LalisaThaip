@@ -27,15 +27,15 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 
 (
     (SELECT dog_id FROM Dogs WHERE name = 'Minion' and owner_id = (SELECT user_id FROM Users WHERE username = 'bobwalker')),
-    '2025-06-10 010:30:00', 45, 'Hampstead', 'open'
+    '2025-06-10 10:30:00', 45, 'Hampstead', 'open'
 ),
 
 (
     (SELECT dog_id FROM Dogs WHERE name = 'Kumo' and owner_id = (SELECT user_id FROM Users WHERE username = 'lisawalker')),
-    '2025-06-10 010:30:00', 30, 'Bangkok', 'open'
+    '2025-06-10 11:30:00', 30, 'Bangkok', 'open'
 ),
 
 (
     (SELECT dog_id FROM Dogs WHERE name = 'Minion' and owner_id = (SELECT user_id FROM Users WHERE username = 'pammy123')),
-    '2025-08-10 010:30:00', 60, 'Emporium', 'open'
+    '2025-08-10 14:30:00', 60, 'Emporium', 'open'
 );
