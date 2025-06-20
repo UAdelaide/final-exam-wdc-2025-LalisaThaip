@@ -113,6 +113,8 @@
               try {
                 const photo = await fetch('https://dog.ceo/api/breeds/image/random');
                 const photoData = await photo.json();
+              } catch (err) {
+                dog.photo = ;;
               }
             })
           }
