@@ -7,6 +7,7 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
@@ -24,7 +25,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/me', (req, res) => { 
+router.get('/me', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
