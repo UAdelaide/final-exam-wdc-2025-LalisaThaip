@@ -4,5 +4,8 @@ const db = require('../models/db');
 
 // GET dogs by owner_id
 router.get('/owner/:ownerId', async (req, res) => {
-    const 
+    const ownerId = req.params.ownerId;
+    try {
+        const [rows] = await db.query
+    }
 })
