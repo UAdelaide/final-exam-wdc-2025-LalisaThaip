@@ -119,7 +119,9 @@
               return dog;
             }));
             this.dog = dogPhotos;
-          } catch (e)
+          } catch (err) {
+            console.error('Error loading ')
+          }
         }
       }
     }).mount('#app');
