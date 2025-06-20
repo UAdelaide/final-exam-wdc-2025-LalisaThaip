@@ -132,9 +132,14 @@ app.use(express.static(path.join(__dirname, 'public')));
       const [dogCount] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
       if (dogCount[0].count === 0) {
         await db.execute(`
-            INSERT INTO Dogs (owner_id, name, size) VALUES
-            ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
-            ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
+        INSERT INTO Dogs (owner_id, name, size)
+        VALUES
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Minion', 'large'),
+        ((SELECT user_id FROM Users WHERE username = 'lisawalker'), 'Kumo', 'small'),
+        ((SELECT user_id FROM Users WHERE username =  'pammy123'), 'Lucy', 'small');
+
         `);
       }
 
