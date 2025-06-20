@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
     secret: 'secret-dog',
     resave: false,
-    saveUnitialized: flase
+    saveUnitialized: false
 }));
 
 // Routes
