@@ -140,7 +140,8 @@
 
         async function loadOwnedDogs(){
             try {
-              const res = await fetch('/api/users/me'); 
+              const res = await fetch('/api/users/me'); //check if logged in
+              if (!res)
             }
         }
 
