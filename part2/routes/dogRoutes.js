@@ -21,7 +21,8 @@ router.get('/owner/:ownerId', async (req, res) => {
 //GET all dogs for homepage part 2
 router.get('/', async (req,res) => {
     try {
-        const [rows] = await db.query()
+        const [rows] = await db.query(`
+        SELECT dog_id , `)
     }
 })
 
