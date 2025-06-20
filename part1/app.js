@@ -168,7 +168,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         (
             (SELECT dog_id FROM Dogs WHERE name = 'Lucy' and owner_id = (SELECT user_id FROM Users WHERE username = 'pammy123')),
             '2025-08-10 14:30:00', 60, 'Emporium', 'open'
-        );b
+        );
         `);
       }
 
