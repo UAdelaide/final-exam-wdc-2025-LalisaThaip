@@ -7,4 +7,4 @@ const db = mysql.createPool({
 
 });
 
-module.export = pool;
+module.exports = pool;
