@@ -226,8 +226,8 @@ app.get('/api/walkrequests/open', async (req,res) => {
 
 app.get('/api/walkers/summary', async (req,res) => {
     try {
-        const [requests] = await db.execute(`
-            
+        const [walkers] = await db.execute(`
+
         `);
         res.json(requests);
 
