@@ -27,7 +27,7 @@ router.get('/', async (req,res) => {
         `);
         res.json(rows);
     } catch (err) {
-        res.status
+        res.status(500).json({ error: 'Failed to fetch all dogs'}
     }
 })
 
