@@ -32,7 +32,7 @@ router.get('/me', (req, res) => {
 });
 
 router.post('logout/', (req,res) => {
-  req.session.destroy(err =>{
+  req.session.destroy(err =>{ //destroy session
     if (err) {
       return res.status(500).json({ error: 'Logout failed' });
     }
