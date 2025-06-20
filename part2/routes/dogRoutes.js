@@ -18,6 +18,9 @@ router.get('/owner/:ownerId', async (req, res) => {
     }
 });
 
+//GET all dogs for homepage part 2
+router.get('/')
+
 
 
 module.exports = router;
