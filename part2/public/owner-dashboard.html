@@ -144,7 +144,8 @@
               if (!res.ok) throw new Error('Not logged in!');
               const user = await res.json();
 
-              const dogs = await fetch(`/api/dogs/owner/${user.user_id}')
+              const dogs = await fetch(`/api/dogs/owner/${user.user_id}`);
+              ownedDogs.value = await 
             }
         }
 
