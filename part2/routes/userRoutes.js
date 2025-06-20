@@ -15,7 +15,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.user = rows[0]; //save user to session
-    res.json({ message: 'Login success!'})
+    res.json({ message: 'Login success!', user: rows[0] });
   }
 
 });
