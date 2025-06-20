@@ -72,8 +72,10 @@
               window.location.href = 'walker-dashboard.html';
 
             } else {
-              throw new Error('Unkni=own role');
+              throw new Error('Unknown role');
             }
+          } catch (err) {
+            this.error - err=
           }
         }
       }
