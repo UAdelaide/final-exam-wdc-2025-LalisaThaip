@@ -12,9 +12,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 // user express-session middleware
 app.use(session({
-    secret: 'secret-',
+    secret: 'secret-dog',
     resave: false,
-    saveUno
+    saveUnitiali
 })
 
 // Routes
