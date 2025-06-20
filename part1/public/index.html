@@ -11,6 +11,30 @@
     </div>
     <h1>DOG WOOF ! DOG WORF !! DOG WORLD !!!</h1>
     <p>Welcome to Dog of the Day. WALK A DOG OR GET YOUR DOG WALKED.</p>
+
+<script>
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                dogPic: ''
+            };
+        },
+        methods: {
+            async getDog() {
+                const res = await fetch('https://dog.ceo/dog-api/documentation/random');
+                const data = await res.json();
+                this.dogPic = data.message;
+            }
+        },
+        mounted() {
+            this.getDog();
+        }
+
+
+    }).mount('#app');
+</script>
 </body>
+
 
 </html>
