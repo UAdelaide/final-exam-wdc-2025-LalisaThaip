@@ -117,7 +117,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
       // Insert data if table is empty
       const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-      if (rows[0].count === 0) {
+      if (userCount[0].count === 0) {
         await db.execute(`
             INSERT INTO Users (username, email, password_hash, role)
             VALUES
@@ -128,6 +128,9 @@ app.use(express.static(path.join(__dirname, 'public')));
             ('pammy123', 'pam@example.com', 'hashed222', 'owner');
         `);
       }
+
+      
+
     } catch (err) {
       console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
     }
