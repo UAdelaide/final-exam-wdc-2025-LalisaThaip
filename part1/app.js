@@ -196,7 +196,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/dogs', async (req,res) => {
     try{
-        const [dogs] = await db.execute
+        const [dogs] = await db.execute()
     }
 
 });
