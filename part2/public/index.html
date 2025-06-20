@@ -65,7 +65,8 @@
             const result = await res.json();
             if (!res.ok) throw new Error(result.error || 'Login failed');
 
-            // redirect
+            // redirect to dashboard based on user role
+            if (result.user.role ===)
           }
         }
       }
