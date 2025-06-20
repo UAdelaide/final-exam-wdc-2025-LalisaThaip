@@ -80,7 +80,8 @@
         // added function to retrieve current logged-in user
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/')
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error()
           }
         }
 
