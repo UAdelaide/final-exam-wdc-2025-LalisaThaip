@@ -70,7 +70,9 @@
               window.location.href = 'owner-dashboard.html';
             } else if (result.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
-              
+
+            } else {
+              throw new Error('Unkni=own role');
             }
           }
         }
