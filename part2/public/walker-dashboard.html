@@ -72,14 +72,11 @@
 
         async function applyToWalk(requestId) {
           try {
-            const user = await getCurrentUser(); // added to replace hardcoded ID
+            const user = await getCurrentUser(); // added to replace hardcoded
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              //modified section
-              const user = await getCurrentUser();
               body: JSON.stringify({ walker_id: user.user_id })
-
             });
             const result = await res.json();
 
